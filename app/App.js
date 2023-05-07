@@ -3,6 +3,8 @@ import CarouselCards from './src/components/Carousel/CarouselCards'
 
 import Onboarding from './src/pages/Onboarding';
 import Home from './src/pages/Home';
+import Viagem from './src/pages/Viagem';
+import Bagagens from './src/pages/Bagagens';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -15,6 +17,8 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Onboarding" component={ Onboarding } />
         <Stack.Screen name="Home" component={ Home } />
+        <Stack.Screen name="Viagem" component={ Viagem } />
+        <Stack.Screen name="Bagagens" component={ Bagagens } />
       </Stack.Navigator>
     </NavigationContainer>
   );
