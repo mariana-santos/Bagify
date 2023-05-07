@@ -4,6 +4,7 @@ export default styles = StyleSheet.create({
     container: {
       backgroundColor: '#171C24',
       padding: 20,
+      paddingTop: 60
     },
     header: {
       color: "#fff",

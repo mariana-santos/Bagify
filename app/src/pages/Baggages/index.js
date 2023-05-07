@@ -1,4 +1,4 @@
-import { Text, ScrollView, View } from 'react-native';
+import { Text, ScrollView, View, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 import Card from '../../components/CardMala';
@@ -35,6 +35,12 @@ export default function Baggages() {
         />
 
         <Card status={2} descricao="Mala do Pedro" cor="prata" corRgb="#4D5661" />
+
+        <TouchableOpacity 
+          onPress={() => navigation.dispatch(StackActions.pop(6))}
+          style={{backgroundColor: '#7FB3E2', padding: 15, borderRadius: 35}}>
+          <Text style={{textAlign: 'center', fontWeight: 'bold' }}>Algo de errado com uma bagagem? Clique aqui!</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

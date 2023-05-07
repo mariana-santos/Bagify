@@ -3,11 +3,12 @@ import Header from '../../components/Header';
 
 import styles from './styles';
 import Card from '../../components/Card';
+import { USER_MOCK } from '../../mock/user';
 
 export default function Travels() {
   return (
     <SafeAreaView>
-      <Header nome="Juliana" />
+      <Header nome={USER_MOCK.name} />
       <ScrollView style={styles.container}>
         <View style={styles.cards}>
           <Card id={1} status={0} descricao="Negócios em Frankfurt." />
