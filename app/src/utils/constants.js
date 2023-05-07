@@ -3,3 +3,5 @@ export const THEME = Object.freeze({
   LIGHT: 1,
   HIGH_CONTRAST: 2,
 });
+
+export const IS_FIRST_ACCESS = true;

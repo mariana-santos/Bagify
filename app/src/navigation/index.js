@@ -26,6 +26,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import { IS_FIRST_ACCESS } from '../utils/constants';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -64,14 +65,12 @@ function Home() {
   );
 }
 
-export const isFirstAccess = false;
-
 export function MainNavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={`${isFirstAccess ? 'Onboarding' : 'Login'}`}
+        initialRouteName={`${IS_FIRST_ACCESS ? 'Onboarding' : 'Login'}`}
       >
         <Stack.Screen name="Onboarding" component={Onboarding} />
 
