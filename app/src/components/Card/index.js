@@ -1,11 +1,17 @@
-import styles from './styles';
-
+import { useContext } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import themedStyles from './styles';
+import { ThemeContext } from '../../context/ThemeContext';
+
 export default function Card(props) {
   const { id, status = 0, descricao } = props;
+
   const navigation = useNavigation();
+  const { theme } = useContext(ThemeContext);
+
+  const styles = themedStyles(theme);
 
   const titulo = 'Viagem #' + id;
 
@@ -27,14 +33,13 @@ export default function Card(props) {
   }
 
   const styleTag = {
-    borderRadius: 40,
-    color: cor_tag,
     borderStyle: 'solid',
     borderWidth: 1,
     borderColor: cor_tag,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    fontSize: 8,
+    borderRadius: 8,
+    borderBottom: 16,
   };
 
   return (
@@ -42,8 +47,8 @@ export default function Card(props) {
       style={styles.card}
       onPress={() => navigation.navigate('TravelDetails')}
     >
-      <View style={styles.wrap_tag}>
-        <Text style={styleTag}>{status_desc}</Text>
+      <View style={[styles.wrap_tag]}>
+        <Text style={{ fontSize: 12, color: cor_tag }}>{status_desc}</Text>
       </View>
       <Text style={styles.header}>{titulo}</Text>
       <Text style={styles.body}>{descricao}</Text>
