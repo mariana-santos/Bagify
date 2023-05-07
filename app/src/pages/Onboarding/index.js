@@ -1,6 +1,15 @@
 import React from 'react';
-import { StyleSheet, ImageBackground, Button } from 'react-native';
+import {
+  StyleSheet,
+  ImageBackground,
+  Button,
+  View,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import CarouselCards from '../../components/Carousel/CarouselCards';
+
+import styles from './styles';
 
 const Onboarding = ({ navigation }) => {
   return (
@@ -8,21 +17,20 @@ const Onboarding = ({ navigation }) => {
       source={require('../../../assets/onboarding.png')}
       style={styles.container}
     >
-      <CarouselCards />
-      <Button title="Continuar" onPress={() => navigation.navigate('Login')} />
+      <View>
+        <View style={{ height: 400 }}>
+          <CarouselCards />
+
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => navigation.navigate('Login')}
+          >
+            <Text style={styles.btn_text}>Continuar</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </ImageBackground>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    // height: 100,
-    padding: 50,
-  },
-});
 
 export default Onboarding;
