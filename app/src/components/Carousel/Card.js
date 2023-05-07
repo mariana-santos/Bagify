@@ -1,16 +1,15 @@
-import React from 'react'
-import { View, Text, StyleSheet, Dimensions, Button } from "react-native"
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
+import { View, Text, StyleSheet, Dimensions, Button } from 'react-native';
 
-export const SLIDER_WIDTH = Dimensions.get('window').width + 100
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8)
+export const SLIDER_WIDTH = Dimensions.get('window').width + 100;
+export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);
 
 const renderItem = ({ item }) => (
-    <View style={styles.container}>
-      <Text style={styles.header}>{item.titulo}</Text>
-      <Text style={styles.body}>{item.body}</Text>
-    </View>
-  );
+  <View style={styles.container}>
+    <Text style={styles.header}>{item.titulo}</Text>
+    <Text style={styles.body}>{item.body}</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -19,17 +18,17 @@ const styles = StyleSheet.create({
     width: ITEM_WIDTH,
     elevation: 7,
     padding: 40,
-    color: '#fff'
+    color: '#fff',
   },
   header: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 28,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   body: {
-    color: "#fff",
-    fontSize: 18
-  }
-})
+    color: '#fff',
+    fontSize: 18,
+  },
+});
 
-export default renderItem
+export default renderItem;
