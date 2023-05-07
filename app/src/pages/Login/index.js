@@ -22,8 +22,8 @@ const Login = ({ navigation }) => {
   const { user } = useContext(UserContext);
   const styles = themedStyles(theme);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('j.herman@fiap.com.br');
+  const [password, setPassword] = useState('Fiap123!');
 
   const handleLogin = () => {
     if (user.password !== password || user.email !== email.toLowerCase()) {

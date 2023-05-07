@@ -1,3 +1,6 @@
+import React from 'react';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
 import Onboarding from '../pages/Onboarding';
 
 import Login from '../pages/Login';
@@ -25,7 +28,6 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
 import { IS_FIRST_ACCESS } from '../utils/constants';
 
 const Tab = createBottomTabNavigator();
@@ -56,8 +58,31 @@ function SettingsStack() {
 }
 
 function Home() {
+  const tabNavigatorOptions = {
+    tabBarOptions: {
+      activeTintColor: '#7FB3E2;',
+      labelStyle: {
+        display: 'none',
+      },
+      style: { backgroundColor: '#7FB3E2;' },
+    },
+    screenOptions: ({ route }) => ({
+      tabBarIcon: ({ size }) => {
+        let iconName;
+
+        if (route.name === 'TravelsStack') iconName = 'plane';
+        else if (route.name === 'BaggagesStack') iconName = 'suitcase';
+        else iconName = 'ellipsis-v';
+
+        return <FontAwesome name={iconName} size={size} color="#fff" />;
+      },
+      tabBarStyle: { backgroundColor: '#0B0E14', borderTopColor: '#28303E' },
+      headerShown: false,
+    }),
+  };
+
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator {...tabNavigatorOptions}>
       <Tab.Screen name="TravelsStack" component={TravelsStack} />
       <Tab.Screen name="BaggagesStack" component={BaggagesStack} />
       <Tab.Screen name="SettingsStack" component={SettingsStack} />
