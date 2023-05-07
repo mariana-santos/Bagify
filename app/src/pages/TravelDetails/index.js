@@ -74,7 +74,7 @@ export default function Viagem({ navigation }) {
 
       <TouchableOpacity
         style={styles.btn}
-        onPress={() => navigation.navigate('Bagagens')}
+        onPress={() => navigation.navigate('DispatchBaggage')}
       >
         <Text style={styles.btn_text}>Despachar malas</Text>
       </TouchableOpacity>
