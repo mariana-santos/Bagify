@@ -1,19 +1,21 @@
-import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Text, ScrollView, View } from 'react-native';
+import Header from '../../components/Header';
 
-// import { Container } from './styles';
+import styles from './styles';
+import Card from '../../components/Card';
 
-const Travels = ({ navigation }) => {
+export default function Travels({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Travels</Text>
+    <ScrollView style={styles.container}>
+      <Header nome="Juliana" />
 
-      <Button
-        title="Detalhes de uma viagem qualquer"
-        onPress={() => navigation.navigate('TravelDetails')}
-      />
-    </View>
+      <View style={styles.cards}>
+        <Card id={1} status={0} descricao="Negócios em Frankfurt." />
+        <Card id={2} status={2} descricao="Negócios em Frankfurt." />
+        <Card id={3} status={1} descricao="Negócios em Frankfurt." />
+        <Card id={4} status={0} descricao="Negócios em Frankfurt." />
+        <Card id={5} status={0} descricao="Negócios em Frankfurt." />
+      </View>
+    </ScrollView>
   );
-};
-
-export default Travels;
+}
