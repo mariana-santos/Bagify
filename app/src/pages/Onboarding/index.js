@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  ImageBackground,
-  Button,
-  View,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import { ImageBackground, View, TouchableOpacity, Text } from 'react-native';
 import CarouselCards from '../../components/Carousel/CarouselCards';
 
 import styles from './styles';
