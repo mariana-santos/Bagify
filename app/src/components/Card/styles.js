@@ -6,26 +6,25 @@ export default themedStyles = (theme) => {
 
   return StyleSheet.create({
     card: {
-      backgroundColor: colorPalette.background,
+      backgroundColor: colorPalette.container,
       padding: 16,
       marginBottom: 20,
       borderRadius: 10,
     },
     header: {
-      color: '#fff',
+      color: colorPalette.title,
       fontSize: 20,
       fontWeight: 'bold',
     },
     body: {
-      color: 'rgba(255, 255, 255, 0.5)',
+      color: colorPalette,
       fontSize: 16,
       marginTop: 10,
     },
     wrap_tag: {
       flexDirection: 'row',
-      marginBottom: 10,
-      borderRadius: 20,
-      overflow: 'hidden',
+      marginBottom: 8,
+      alignSelf: 'flex-start',
     },
   });
 };

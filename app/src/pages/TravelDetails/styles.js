@@ -34,8 +34,8 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderStyle: 'dotted',
-    borderColor: '#CDCECF',
+    borderStyle: 'solid',
+    borderColor: '#434343',
     borderBottomWidth: 1,
     paddingVertical: 30,
   },
@@ -58,6 +58,7 @@ export default styles = StyleSheet.create({
     marginVertical: 35,
   },
   btn: {
+    marginTop: 16,
     backgroundColor: '#7FB3E2',
     padding: 15,
     borderRadius: 35,

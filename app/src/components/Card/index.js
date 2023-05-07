@@ -33,13 +33,13 @@ export default function Card(props) {
   }
 
   const styleTag = {
-    color: cor_tag,
     borderStyle: 'solid',
     borderWidth: 1,
     borderColor: cor_tag,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    fontSize: 8,
+    borderRadius: 8,
+    borderBottom: 16,
   };
 
   return (
@@ -47,8 +47,8 @@ export default function Card(props) {
       style={styles.card}
       onPress={() => navigation.navigate('TravelDetails')}
     >
-      <View style={styles.wrap_tag}>
-        <Text style={styleTag}>{status_desc}</Text>
+      <View style={[styles.wrap_tag]}>
+        <Text style={{ fontSize: 12, color: cor_tag }}>{status_desc}</Text>
       </View>
       <Text style={styles.header}>{titulo}</Text>
       <Text style={styles.body}>{descricao}</Text>
