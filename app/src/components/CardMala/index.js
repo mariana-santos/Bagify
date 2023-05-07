@@ -50,7 +50,7 @@ export default function Card(props) {
   return (
     <TouchableOpacity
       style={styles.card}
-      onPress={() => navigation.navigate('Viagem')}
+      onPress={() => navigation.navigate('TravelDetails')}
     >
       <View style={styles.wrap_img}>
         <Image source={require('../../../assets/mala2.png')} style={styles.image} />
