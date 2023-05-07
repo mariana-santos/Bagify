@@ -34,6 +34,15 @@ export default function Viagem({ navigation }) {
         <Text style={styles.header}>Viagem #01</Text>
         <Text style={styles.body}>Negócios em Madri</Text>
 
+<<<<<<< HEAD
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => navigation.navigate('DispatchBaggage')}
+      >
+        <Text style={styles.btn_text}>Despachar malas</Text>
+      </TouchableOpacity>
+    </ScrollView>
+=======
         <View style={styles.container_info}>
           <View style={styles.row}>
             <View style={styles.col}>
@@ -76,5 +85,6 @@ export default function Viagem({ navigation }) {
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
+>>>>>>> 39135bd6598136132e82b7286a43635754fa6a92
   );
 }
