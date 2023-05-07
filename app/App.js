@@ -1,5 +1,10 @@
+import { ThemeProvider } from './src/context/ThemeContext';
 import { MainNavigation } from './src/navigation';
 
 export default function App() {
-  return <MainNavigation />;
+  return (
+    <ThemeProvider>
+      <MainNavigation />
+    </ThemeProvider>
+  );
 }
