@@ -1,11 +1,17 @@
-import styles from './styles';
-
+import { useContext } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import themedStyles from './styles';
+import { ThemeContext } from '../../context/ThemeContext';
+
 export default function Card(props) {
   const { id, status = 0, descricao } = props;
+
   const navigation = useNavigation();
+  const { theme } = useContext(ThemeContext);
+
+  const styles = themedStyles(theme);
 
   const titulo = 'Viagem #' + id;
 
@@ -27,7 +33,6 @@ export default function Card(props) {
   }
 
   const styleTag = {
-    borderRadius: 40,
     color: cor_tag,
     borderStyle: 'solid',
     borderWidth: 1,

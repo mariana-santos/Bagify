@@ -29,3 +29,23 @@ export const COLORS_SCHEME = Object.freeze({
     text: '#000000',
   },
 });
+
+export class ColorPalette {
+  constructor({
+    accent = '',
+    darkAccent = '',
+    background = '',
+    container = '',
+    lightContainer = '',
+    title = '',
+    text = '',
+  } = {}) {
+    this.accent = accent;
+    this.darkAccent = darkAccent;
+    this.background = background;
+    this.container = container;
+    this.lightContainer = lightContainer;
+    this.title = title;
+    this.text = text;
+  }
+}

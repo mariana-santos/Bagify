@@ -5,7 +5,6 @@ import styles from './styles.js';
 import Icon from 'react-native-vector-icons/FontAwesome.js';
 
 export default function Viagem({ navigation }) {
-  let status_desc = '';
   let cor_tag = '#F09E00';
 
   const styleTag = {
@@ -19,25 +18,12 @@ export default function Viagem({ navigation }) {
     fontSize: 8,
   };
 
-  // switch (status) {
-  //     case 0:
-  //         status_desc = 'Em andamento'
-  //         cor_tag = "#F09E00"
-  //         break;
-  //     case 1:
-  //         status_desc = 'Próximas'
-  //         cor_tag = "#F06500"
-  //         break;
-  //     default:
-  //         status_desc = 'Finalizadas'
-  //         cor_tag = "#007DF0"
-  // }
-
   return (
     <ScrollView style={styles.container}>
       <View style={styles.wrap_tag}>
         <Text style={styleTag}>Em andamento</Text>
       </View>
+
       <Text style={styles.header}>Viagem #01</Text>
       <Text style={styles.body}>Negócios em Madri</Text>
 
