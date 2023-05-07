@@ -1,6 +1,0 @@
-{
-  "editor.rulers": [80, 120],
-  "prettier.printWidth": 80,
-  "editor.formatOnSave": true,
-  "editor.tabSize": 2,
-}
