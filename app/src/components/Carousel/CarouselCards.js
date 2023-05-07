@@ -1,12 +1,11 @@
-import React, { useState, useRef } from 'react'
-import { View, Text, StyleSheet, Dimensions } from "react-native"
-import Carousel, { Pagination } from 'react-native-snap-carousel'
-import data from './data'
-import renderItem, { ITEM_WIDTH, SLIDER_WIDTH } from './Card'
-const ScreenHeight = Dimensions.get("window").height;
+import React, { useState } from 'react';
+import { View, StyleSheet, Dimensions } from 'react-native';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
+import data from './data';
+import renderItem, { ITEM_WIDTH, SLIDER_WIDTH } from './Card';
 
 const CarouselCards = () => {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(0);
 
   return (
     <View>
@@ -31,24 +30,19 @@ const CarouselCards = () => {
           height: 10,
           borderRadius: 5,
           marginHorizontal: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.92)'
+          backgroundColor: 'rgba(0, 0, 0, 0.92)',
         }}
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.8}
       />
-
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   slider: {
-    height: ScreenHeight,
-    alignItems: 'end',
-    justifyContent: 'center',
-    height: 100,
-    padding: 50
+    margin: 100,
   },
 });
 
-export default CarouselCards
+export default CarouselCards;
