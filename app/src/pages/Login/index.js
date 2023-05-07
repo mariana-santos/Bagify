@@ -1,16 +1,36 @@
-import React, { useContext } from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { useContext, useState } from 'react';
+import {
+  View,
+  Text,
+  Button,
+  TouchableOpacity,
+  Image,
+  TextInput,
+  Alert,
+} from 'react-native';
 
-// import { Container } from './styles';
+import themedStyles from './styles';
 
+import { UserContext } from '../../context/UserContext';
 import { ThemeContext } from '../../context/ThemeContext';
 
 import { isFirstAccess } from '../../../App';
+import { SafeAreaView } from 'react-navigation';
 
 const Login = ({ navigation }) => {
   const { theme } = useContext(ThemeContext);
+  const { user } = useContext(UserContext);
+  const styles = themedStyles(theme);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = () => {
+    if (user.password !== password || user.email !== email.toLowerCase()) {
+      Alert.alert('Nenhum usuário encontrado');
+      return;
+    }
+
     if (isFirstAccess) {
       navigation.navigate('Step1');
     } else {
@@ -19,14 +39,37 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Login</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.brand}>
+        <Image
+          source={require('../../../assets/vertical-brand.png')}
+          style={styles.image}
+        />
+      </View>
 
-      <Text>{JSON.stringify(theme)}</Text>
-      <Text>{theme?.accent}</Text>
+      <View style={styles.form}>
+        <Text style={styles.title}>BOAS VINDAS AO BAGIFY.</Text>
 
-      <Button title="Login" onPress={handleLogin} />
-    </View>
+        <Text style={styles.label}>E-mail</Text>
+        <TextInput style={styles.input} value={email} onChangeText={setEmail} />
+
+        <Text style={styles.label}>Senha</Text>
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={handleLogin}
+          onChangeText={setPassword}
+        >
+          <Text style={styles.btn_text}>Login</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
 

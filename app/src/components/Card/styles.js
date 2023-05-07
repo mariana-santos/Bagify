@@ -17,7 +17,7 @@ export default themedStyles = (theme) => {
       fontWeight: 'bold',
     },
     body: {
-      color: colorPalette,
+      color: colorPalette.text,
       fontSize: 16,
       marginTop: 10,
     },
